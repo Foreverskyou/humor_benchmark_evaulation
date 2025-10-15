@@ -8,7 +8,7 @@ Filtering
 
 Annotation System
 
-我们的标注平台在Label Studio，搭建平台请参考https://github.com/HumanSignal/label-studio和Annotation_Manual
+我们的标注平台在Label Studio，搭建平台请参考Annotation_Manual和https://github.com/HumanSignal/label-studio
 
 Evaluation
 
