@@ -40,11 +40,11 @@ Please send an email to **shi_zpeng@sjtu.edu.cn**. 🌟
 
 📍 **Downloading**
 
-使用WFDownloader从X上爬取视频(see [Before filtering](https://huggingface.co/datasets/Foreverskyou/video/tree/main/Before%20filtering))
+Use WFDownloader to crawl videos from X. (see [Before filtering](https://huggingface.co/datasets/Foreverskyou/video/tree/main/Before%20filtering))
 
 📍 **Filtering**
 
-去除重复的视频和有害视频后，部署whisper模型，仅保留videos with less than 10 characters(see [After filtering](https://huggingface.co/datasets/Foreverskyou/video/tree/main/After%20filtering)).
+After removing duplicate and harmful videos, deploy the Whisper model and only retain videos with less than 10 characters. (see [After filtering](https://huggingface.co/datasets/Foreverskyou/video/tree/main/After%20filtering)).
 
 ```bash
 python ./filter/extract_speech_text.py
@@ -52,22 +52,16 @@ python ./filter/extract_speech_text.py
 
 📍 **Annotation**
 
-我们的标注平台在Label Studio，搭建平台请参考[Annotation_Manual](https://github.com/Foreverskyou/humor_benchmark_evaulation/tree/main/Annotation_Manual)和[Label Studio](https://github.com/HumanSignal/label-studio)
+Our annotation platform is Label Studio, please refer to [Annotation_Manual](https://github.com/Foreverskyou/humor_benchmark_evaulation/tree/main/Annotation_Manual) and [Label Studio](https://github.com/HumanSignal/label-studio) for setting up the platform.
 
 📍 **Evaluation**: 
-
-Here we provide an example template [scripts](./evaluation/output_test_template.json). Once you have prepared the model responses in this format, please refer to the evaluation script [eval_your_results.py](https://github.com/thanku-all/parse_answer/blob/main/eval_your_results.py), and you will get the accuracy scores across video_durations, video domains, video subcategories, and task types. 
-The evaluation does not introduce any third-party models, such as ChatGPT.
 
 ```bash
 ./scripts/Text_Only/example_QA.sh
 ```
-You can specify multiple types separated by commas or organize them in a list, for example: `short,medium,long` or `["short","medium","long"]`.
+Here we provide example scripts for the three tasks under the three settings: Text-Only, Video-Only, and Video+Audio.
 
-
-测试三种不同的的setting: Text-Only/Video-Only/Video+Audio，分为QA/explanation/matching，测试脚本可参考scripts，其中
-
-MODEL_NAME=`['Qwen2.5-Omni','Qwen2.5-VL','Gemini2.5-flash','GPT-4o','InterVL 3.5','Minicpm 2.6-o','video SALMONN 2']`
+You can specify different tasks, such as: `['QA','explanation','matching']`. And you can also specify different models, for example:`['Qwen2.5-Omni','Qwen2.5-VL','Gemini2.5-flash','GPT-4o','InterVL 3.5','Minicpm 2.6-o','video SALMONN 2']`
 
 ## :black_nib: Citation
 
