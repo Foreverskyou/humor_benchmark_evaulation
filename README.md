@@ -6,11 +6,12 @@
 ![Gemini](https://img.shields.io/badge/Model-Gemini-green) 
 ![GPT-4o](https://img.shields.io/badge/Model-GPT--4o-green)
 
+<font size=7><div align='center' > [[📖 arXiv Paper](https://arxiv.org/pdf/2509.25773)] [[📊 Dataset](https://huggingface.co/datasets/Foreverskyou/video/tree/main)] </div></font>
+
 <p align="center">
     <img src="./figures/teaser.png" width="100%" height="100%">
 </p>
 
-<font size=7><div align='center' > [[📖 arXiv Paper](https://arxiv.org/pdf/2509.25773)] [[📊 Dataset](https://huggingface.co/datasets/Foreverskyou/video/tree/main)] </div></font>
 
 ## 📐 Dataset Examples
 
