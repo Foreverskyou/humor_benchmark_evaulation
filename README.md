@@ -22,9 +22,9 @@
 
 **License**:
 ```
-Video-MME is only used for academic research. Commercial use in any form is prohibited.
+V-HUB is only used for academic research. Commercial use in any form is prohibited.
 The copyright of all videos belongs to the video owners.
-If there is any infringement in Video-MME, please email videomme2024@gmail.com and we will remove it immediately.
+If there is any infringement in V-HUB, please email videomme2024@gmail.com and we will remove it immediately.
 Without prior approval, you cannot distribute, publish, copy, disseminate, or modify Video-MME in whole or in part. 
 You must strictly comply with the above restrictions.
 ```
@@ -37,9 +37,17 @@ Please send an email to **videomme2024@gmail.com**. 🌟
     <img src="./figures/pipline.png" width="100%" height="100%">
 </p>
 
+📍 **Downloading**
+
+从[huggingface](https://huggingface.co/datasets/Foreverskyou/video/tree/main)上下载数据集
+
 📍 **Filtering**
 
-部署whisper模型，选择videos with less than 10 characters.
+去除重复的视频和有害视频后，部署whisper模型，仅保留videos with less than 10 characters.
+
+```bash
+python ./filter/extract_speech_text.py
+```
 
 📍 **Annotation**
 
