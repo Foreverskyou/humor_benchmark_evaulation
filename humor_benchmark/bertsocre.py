@@ -62,11 +62,3 @@ def score_explanation(cand_file, ref_file):
     sentbert_mean = sum(scores) / len(scores)
 
     return bert_p_mean, bert_r_mean, bert_f1_mean, meteor_mean, sentbert_mean
-
-if __name__ == "__main__":
-
-    # 1. 读取两份 CSV 文件
-    cand_file = "video_qwen_QA.csv"
-    ref_file = "video_QA.csv"
-
-    score_explanation(cand_file, ref_file)
