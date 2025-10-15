@@ -26,7 +26,6 @@ from backbone import Gemini_25
 # from backbone import GPT4o
 # from backbone import VideoLlama3
 # from backbone import VideoSALMONN2
-# from backbone import GLM45V
 # from backbone import MINICPM26_o
 # from backbone import InternVL35
 
@@ -61,8 +60,6 @@ def load_backbone(TESTING_MODEL):
         model = InternVL35()
     elif TESTING_MODEL == "Minicpm 2.6-o":
         model = MINICPM26_o()
-    elif TESTING_MODEL == "GLM 4.5V":
-        model = GLM45V()
     elif TESTING_MODEL == "video SALMONN 2":
         model = VideoSALMONN2()
     else:
