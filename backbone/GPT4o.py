@@ -51,6 +51,15 @@ class GPT4o:
         # 抽帧并转 Base64
         base64_frames = extract_frames_base64(video_path, nframes=nframes, interval=interval)
 
+        total_frames = len(base64_frames)
+        
+        if total_frames > 40:
+            indices = np.linspace(0, total_frames - 1, 40, dtype=int) # 均匀取40帧
+            sampled_base64Frames = []
+            for ind in indices:
+                sampled_base64Frames.append(base64_frames[ind])
+            base64_frames = sampled_base64Frames
+        
         try:
             completion = self.client.chat.completions.create(
                 model=self.model,
