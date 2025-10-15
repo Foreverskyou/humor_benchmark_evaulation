@@ -173,24 +173,3 @@ class VideoSALMONN2:
             return torch.device("cuda")
 
         return torch.device("cpu")
-
-if __name__ == "__main__":
-    video_description = "The first part of the video says 'Movie Plot', in which the man suddenly turns into a corner and hides... The second part says 'Reality', in which the man still turns into a corner, but the people chasing him immediately turn around and see him and catch him."
-    system_prompt = "You are a helpful AI assistant specialized in video understanding and humor analysis."
-    user_prompt = (
-        "These are frames from a video. "
-        "Your job is to explain why the video is humorous in 2-3 sentences. "
-        "Respond with a 2-3 sentence explanation of the joke.\n\n"
-        "Output format:\n"
-        "Explanation: <answer>\n\n"
-        f"Video Description: {video_description}"
-    )
-
-    backbone = VideoSALMONN2()
-    response = backbone.get_completion(
-        system_prompt,
-        user_prompt,
-        video_path="../humor_benchmark/video/1716681072748982272.mp4"
-    )
-    print("\n\n--- SCRIPT FINISHED ---")
-    print(response)
