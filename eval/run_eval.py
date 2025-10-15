@@ -10,6 +10,7 @@ project_root = os.path.dirname(script_dir)
 sys.path.append(project_root)
 backbone_dir = os.path.join(project_root, 'backbone')
 sys.path.append(backbone_dir)
+from humor_benchmark.autodq import evaluate_from_csv
 from humor_benchmark.bert_QA import score_QA
 from humor_benchmark.bertsocre import score_explanation
 from humor_benchmark.accuracy import score_caption
@@ -128,6 +129,16 @@ def main():
         generate_explanation_videos(args.video_dir, args.questions_csv, model, args.cand_file)
         
         # 评估解释
+        evaluate_from_csv(
+        ref_csv_path=args.ref_file,
+        cand_csv_path=args.cand_file,
+        ref_column="humor_explanation",
+        cand_column="explanation",
+        dataset_name="humor_ex",
+        verbose=False,
+        save_dir="./results/autodq"
+        )
+        
         bert_p_mean, bert_r_mean, bert_f1_mean, meteor_mean, sentbert_mean = score_explanation(args.cand_file, args.ref_file)
         metrics = {
             "Metric": ["BERT_Precision", "BERT_Recall", "BERT_F1", "METEOR", "SentBert"],
