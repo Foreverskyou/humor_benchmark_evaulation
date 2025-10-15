@@ -12,11 +12,4 @@ Annotation System
 
 Evaluation
 
-Text-Only
-
-
-
-Video-Only
-
-Video+Audio
-
+测试三种不同的的setting: Text-Only/Video-Only/Video+Audio，分为QA/explanation/matching，测试脚本可参考scripts，其中MODEL_NAME=['Qwen2.5-Omni','Qwen2.5-VL','Gemini2.5-flash','GPT-4o','InterVL 3.5','Minicpm 2.6-o','video SALMONN 2']
