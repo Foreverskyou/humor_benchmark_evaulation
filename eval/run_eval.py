@@ -23,11 +23,11 @@ from backbone import Qwen25_Omni
 from backbone import Gemini_20
 from backbone import Qwen25_VL
 from backbone import Gemini_25
-# from backbone import GPT4o
-# from backbone import VideoLlama3
-# from backbone import VideoSALMONN2
-# from backbone import MINICPM26_o
-# from backbone import InternVL35
+from backbone import GPT4o
+from backbone import VideoLlama3
+from backbone import VideoSALMONN2
+from backbone import MINICPM26_o
+from backbone import InternVL35
 
 
 sys.path.append(os.getcwd())
