@@ -24,12 +24,12 @@
 ```
 V-HUB is only used for academic research. Commercial use in any form is prohibited.
 The copyright of all videos belongs to the video owners.
-If there is any infringement in V-HUB, please email videomme2024@gmail.com and we will remove it immediately.
-Without prior approval, you cannot distribute, publish, copy, disseminate, or modify Video-MME in whole or in part. 
+If there is any infringement in V-HUB, please email shi_zpeng@sjtu.edu.cn and we will remove it immediately.
+Without prior approval, you cannot distribute, publish, copy, disseminate, or modify V-HUB in whole or in part. 
 You must strictly comply with the above restrictions.
 ```
 
-Please send an email to **videomme2024@gmail.com**. 🌟
+Please send an email to **shi_zpeng@sjtu.edu.cn**. 🌟
 
 ## 🔮 Data Curation and Evaluation Pipeline
 
@@ -39,11 +39,11 @@ Please send an email to **videomme2024@gmail.com**. 🌟
 
 📍 **Downloading**
 
-从[huggingface](https://huggingface.co/datasets/Foreverskyou/video/tree/main)上下载数据集
+使用WFDownloader从X上爬取视频(see [Before filtering](https://huggingface.co/datasets/Foreverskyou/video/tree/main/Before%20filtering))
 
 📍 **Filtering**
 
-去除重复的视频和有害视频后，部署whisper模型，仅保留videos with less than 10 characters.
+去除重复的视频和有害视频后，部署whisper模型，仅保留videos with less than 10 characters(see [After filtering](https://huggingface.co/datasets/Foreverskyou/video/tree/main/After%20filtering)).
 
 ```bash
 python ./filter/extract_speech_text.py
