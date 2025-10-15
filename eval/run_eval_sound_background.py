@@ -21,11 +21,6 @@ from humor_benchmark.matching_question import generate_matchingQ_with_correct_ch
 from humor_benchmark.open_ended_QA import process_qa_videos
 from backbone import Qwen25_Omni_Sound
 from backbone import Gemini25_Sound
-# from backbone import GPT4o
-# from backbone import VideoSALMONN2
-# from backbone import GLM45V
-# from backbone import MINICPM26_o
-# from backbone import InternVL35
 
 
 sys.path.append(os.getcwd())
