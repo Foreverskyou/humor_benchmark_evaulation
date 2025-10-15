@@ -48,21 +48,3 @@ class Gemini25_Description:
 
         except Exception as e:
             return f"Error: {str(e)}"
-
-if __name__ == "__main__":
-    video_description = "The first part of the video says 'Movie Plot', in which the man suddenly turns into a corner and hides, and the people chasing him don't notice him and just run away. The second part says 'Reality', in which the man still turns into a corner, but the people chasing him immediately turn around and see him and catch him."
-    system_prompt = "You are a helpful AI assistant specialized in video understanding and humor analysis. You can explain jokes clearly and naturally based on video content and video description."
-    user_prompt = (
-                 "You'll be given a description of the video. " 
-                 "Your job is to explain why the video is humorous in 2-3 sentences as if you were explaning to a friend who doesn't get the joke yet. "
-                 "Respond with a 2-3 sentence explanation of the joke and how it relates to the video.\n\n"
-                 "Output format:\n"
-                 "Explanation: <answer>\n\n"
-                 f"Video Description: {video_description}"
-             )
-    backbone = Gemini25_Description()
-    response = backbone.get_completion(system_prompt, user_prompt)
-    print(response)
-    
-    # A correct form of the example is: 
-    # Explanation: The humor comes from the stark contrast between the movie plot and reality. In the movie, the protagonist cleverly hides from pursuers without being noticed, showcasing a common trope where the hero outsmarts the bad guys. However, in real life, the same scenario reveals that people are more likely to spot someone hiding right next to them, turning what should be a suspenseful moment into an anticlimactic one. This unexpected twist highlights how our expectations often differ from reality.
