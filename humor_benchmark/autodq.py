@@ -600,14 +600,3 @@ def evaluate_from_csv(
         traceback.print_exc()
         return {"recall": 0.0, "precision": 0.0, "f1": 0.0, "success_count": 0, "failed_count": 0}
     
-if __name__ == "__main__":
-
-    result = evaluate_from_csv(
-        ref_csv_path="non.csv",
-        cand_csv_path="./results_video_sound/explanation/non_gemini25_all.csv",
-        ref_column="humor_explanation",
-        cand_column="explanation",
-        dataset_name="humor_ex",
-        verbose=False,
-        save_dir="./results/autodq"
-    )
