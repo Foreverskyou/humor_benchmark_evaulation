@@ -1,36 +1,59 @@
 # V-HUB: A VISUAL-CENTRIC HUMOR UNDERSTANDING BENCHMARK FOR VIDEO LLMS
 
+![VideoQA](https://img.shields.io/badge/Task-VideoQA-red) 
+![Multi-Modal](https://img.shields.io/badge/Task-Multi--Modal-red) 
+![Video-MME](https://img.shields.io/badge/Dataset-V--HUB-blue)  
+![Gemini](https://img.shields.io/badge/Model-Gemini-green) 
+![GPT-4o](https://img.shields.io/badge/Model-GPT--4o-green)
+
 <font size=7><div align='center' > [[📖 arXiv Paper](https://arxiv.org/pdf/2509.25773)] [[📊 Dataset](https://huggingface.co/datasets/Foreverskyou/video/tree/main)] </div></font>
 
-Data
+## 📐 Dataset Examples
+
+
+## 🔍 Dataset
+
+**License**:
+```
+Video-MME is only used for academic research. Commercial use in any form is prohibited.
+The copyright of all videos belongs to the video owners.
+If there is any infringement in Video-MME, please email videomme2024@gmail.com and we will remove it immediately.
+Without prior approval, you cannot distribute, publish, copy, disseminate, or modify Video-MME in whole or in part. 
+You must strictly comply with the above restrictions.
+```
+
+Please send an email to **videomme2024@gmail.com**. 🌟
+
+
+
+## 🔮 Data Curation and Evaluation Pipeline
+
+📍 **Downloading**
 
 我们的数据集下载地址：https://huggingface.co/datasets/Foreverskyou/video/tree/main
 
-Filtering
+📍 **Filtering**
 
 部署whisper模型，选择videos with less than 10 characters.
 
-Annotation
+📍 **Annotation**
 
-我们的标注平台在Label Studio，搭建平台请参考[Annotation_Manual]和[Label Studio](https://github.com/HumanSignal/label-studio)
+我们的标注平台在Label Studio，搭建平台请参考[Annotation_Manual](https://github.com/Foreverskyou/humor_benchmark_evaulation/tree/main/Annotation_Manual)和[Label Studio](https://github.com/HumanSignal/label-studio)
 
 📍 **Evaluation**: 
 
-To extract the answer and calculate the scores, we add the model response to a JSON file. Here we provide an example template [output_test_template.json](./evaluation/output_test_template.json). Once you have prepared the model responses in this format, please refer to the evaluation script [eval_your_results.py](https://github.com/thanku-all/parse_answer/blob/main/eval_your_results.py), and you will get the accuracy scores across video_durations, video domains, video subcategories, and task types. 
+Here we provide an example template [output_test_template.json](./evaluation/output_test_template.json). Once you have prepared the model responses in this format, please refer to the evaluation script [eval_your_results.py](https://github.com/thanku-all/parse_answer/blob/main/eval_your_results.py), and you will get the accuracy scores across video_durations, video domains, video subcategories, and task types. 
 The evaluation does not introduce any third-party models, such as ChatGPT.
 
 ```bash
-python eval_your_results.py \
-    --results_file $YOUR_RESULTS_FILE \
-    --video_duration_type $VIDEO_DURATION_TYPE \
-    --return_categories_accuracy \
-    --return_sub_categories_accuracy \
-    --return_task_types_accuracy
+./scripts/Text_Only/example_QA.sh
 ```
-Please ensure that the `results_file` follows the specified JSON format stated above, and `video_duration_type` is specified as either `short`, `medium`, or `long`. If you wish to assess results across various duration types, you can specify multiple types separated by commas or organize them in a list, for example: `short,medium,long` or `["short","medium","long"]`.
+You can specify multiple types separated by commas or organize them in a list, for example: `short,medium,long` or `["short","medium","long"]`.
 
 
-测试三种不同的的setting: Text-Only/Video-Only/Video+Audio，分为QA/explanation/matching，测试脚本可参考scripts，其中MODEL_NAME=['Qwen2.5-Omni','Qwen2.5-VL','Gemini2.5-flash','GPT-4o','InterVL 3.5','Minicpm 2.6-o','video SALMONN 2']
+测试三种不同的的setting: Text-Only/Video-Only/Video+Audio，分为QA/explanation/matching，测试脚本可参考scripts，其中
+
+MODEL_NAME=`['Qwen2.5-Omni','Qwen2.5-VL','Gemini2.5-flash','GPT-4o','InterVL 3.5','Minicpm 2.6-o','video SALMONN 2']`
 
 ## :black_nib: Citation
 
