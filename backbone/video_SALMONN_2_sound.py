@@ -282,30 +282,3 @@ class VideoSALMONN2_Sound:
         streams = data.get("streams", [])
         return len(streams) > 0
 
-
-if __name__ == "__main__":
-    video_description = (
-        "A man in skates fled, and two security guards couldn't catch him. "
-        "Then many more people appeared in skates, creating a scene of chaos. "
-        "The man ran out the door and used a cane to hook a car on the road, while others rushed out trying to chase him "
-        "but ultimately couldn't catch up and fell down."
-    )
-    system_prompt = (
-        "You are a helpful AI assistant specialized in video understanding and humor analysis. "
-        "You can explain jokes clearly and naturally based on video content and video description."
-    )
-    user_prompt = (
-        "These are frames from a video. "
-        "Your job is to explain why the video is humorous in 2-3 sentences as if you were explaining "
-        "to a friend who doesn't get the joke yet. "
-        "Respond with a 2-3 sentence explanation of the joke and how it relates to the video.\n\n"
-        "Output format:\n"
-        "Explanation: <answer>\n\n"
-    )
-    backbone = VideoSALMONN2_Sound(
-        model_name_or_path="/data/henry/pretrain_model/video-SALMONN-2/",
-        device="cuda:0",
-    )
-    resp = backbone.get_completion(system_prompt, user_prompt, video_path="../data/all_data/1146_clip_17.mp4")
-    print(resp)
-
