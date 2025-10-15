@@ -125,9 +125,9 @@ def extract_frames_base64(video_path, nframes, interval):
     if not cap.isOpened():
         raise IOError(f"Cannot open video: {video_path}")
     
-    # fps = cap.get(cv2.CAP_PROP_FPS)
-    # frame_interval = int(fps * interval)
-    frame_interval = max(1, int(interval))
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    frame_interval = int(fps * interval)
+    # frame_interval = max(1, int(interval))
     base64_frames = []
     count = 0
     
