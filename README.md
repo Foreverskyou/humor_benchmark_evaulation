@@ -37,10 +37,6 @@ Please send an email to **videomme2024@gmail.com**. 🌟
     <img src="./figures/pipline.png" width="100%" height="100%">
 </p>
 
-📍 **Downloading**
-
-我们的数据集下载地址：https://huggingface.co/datasets/Foreverskyou/video/tree/main
-
 📍 **Filtering**
 
 部署whisper模型，选择videos with less than 10 characters.
