@@ -69,20 +69,3 @@ class GPT4o:
 
         except Exception as e:
             return f"Error: {str(e)}"
-
-
-if __name__ == "__main__":
-    video_description = "The first part of the video says 'Movie Plot', in which the man suddenly turns into a corner and hides, and the people chasing him don't notice him and just run away. The second part says 'Reality', in which the man still turns into a corner, but the people chasing him immediately turn around and see him and catch him."
-    system_prompt = "You are a helpful AI assistant specialized in video understanding and humor analysis. You can explain jokes clearly and naturally based on video content and video description."
-    user_prompt = (
-           f"These are frames from a video. "
-                 "And you'll be given a description of the video. " 
-                 "Your job is to explain why the video is humorous in 2-3 sentences as if you were explaning to a friend who doesn't get the joke yet. "
-                 "Respond with a 2-3 sentence explanation of the joke and how it relates to the video.\n\n"
-                 "Output format:\n"
-                 "Explanation: <answer>\n\n"
-                 f"Video Description: {video_description}"
-             )
-    backbone = GPT4o()
-    response = backbone.get_completion(system_prompt, user_prompt, video_path="humor_benchmark/video/1716681072748982272.mp4")
-    print(response)
